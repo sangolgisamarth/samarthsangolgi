@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BananaLife | MobileNetV2 Prototype</title>
+<style>
+:root{--bg:#f6f8f3;--panel:#fff;--ink:#17231b;--muted:#69756c;--line:#e4e9e1;--green:#26734d;--pale:#e8f4eb;--shadow:0 18px 50px rgba(28,55,35,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{max-width:1120px;margin:auto;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:850;letter-spacing:-.5px}.logo{width:44px;height:44px;display:grid;place-items:center;background:#fff1c0;border-radius:14px;font-size:25px}.pill{font-size:11px;font-weight:800;color:var(--green);background:#edf6ee;border:1px solid #d6e7d8;border-radius:999px;padding:8px 12px}
+main{max-width:1120px;margin:8px auto 55px;padding:0 24px}.hero{padding:24px 0 28px;max-width:750px}.eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:850;color:var(--green);text-transform:uppercase}.hero h1{font-size:clamp(35px,5vw,54px);letter-spacing:-2px;line-height:1.08;margin:13px 0}.hero p{font-size:15px;line-height:1.75;color:var(--muted);margin:0}
+.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}h2{font-size:18px;margin:0 0 7px;letter-spacing:-.3px}.sub{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 18px}
+.drop{min-height:235px;border:1.5px dashed #b7cbb9;border-radius:17px;background:#fafcf8;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;cursor:pointer;overflow:hidden}.drop.drag{background:#edf8ee;border-color:var(--green)}.upload-icon{font-size:32px;margin-bottom:10px}.drop strong{display:block;font-size:14px}.drop small{display:block;color:var(--muted);font-size:11px;line-height:1.6;margin-top:7px}.preview{display:none;max-width:100%;max-height:280px;object-fit:contain;border-radius:12px}input[type=file]{display:none}
+.actions{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap}button{border:0;border-radius:11px;padding:12px 15px;font-size:12px;font-weight:800;cursor:pointer}.primary{background:var(--green);color:white;flex:1}.secondary{background:#f2f4f0;border:1px solid var(--line);color:#354238}.note{font-size:10px;line-height:1.65;color:var(--muted);margin:14px 0 0}
+.resulthead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.model-pill{font-size:10px;font-weight:850;white-space:nowrap;color:var(--green);background:var(--pale);padding:7px 9px;border-radius:999px}.empty{min-height:235px;border:1px solid var(--line);border-radius:17px;display:grid;place-items:center;text-align:center;padding:22px;background:linear-gradient(145deg,#fff,#f8fbf6)}.empty .symbol{font-size:38px;margin-bottom:8px}.empty strong{font-size:14px}.empty p{font-size:11px;line-height:1.6;color:var(--muted);max-width:245px;margin:8px auto 0}
+.results{display:none}.state{background:#f0f7f0;border:1px solid #dcecdf;border-radius:15px;padding:17px;margin-bottom:12px}.label{font-size:10px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.state-name{font-size:24px;letter-spacing:-.6px;font-weight:850;margin:7px 0}.state-desc{font-size:11px;line-height:1.6;color:var(--muted)}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{border:1px solid var(--line);border-radius:14px;padding:14px}.metric span{font-size:10px;font-weight:750;color:var(--muted);display:block}.metric strong{font-size:23px;letter-spacing:-.5px;display:block;margin-top:7px}.metric small{font-size:10px;line-height:1.5;color:var(--muted);display:block;margin-top:4px}.bar{height:7px;background:#e7eee6;border-radius:99px;overflow:hidden;margin-top:12px}.bar div{height:100%;width:49%;background:var(--green)}.disclaimer{font-size:10px;line-height:1.65;color:var(--muted);background:#f7f8f5;padding:12px;border-radius:11px;margin-top:12px}footer{max-width:1120px;margin:auto;padding:0 24px 30px;font-size:10px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){header{padding:18px}.pill{display:none}main{padding:0 16px}.hero{padding-top:16px}.hero h1{letter-spacing:-1.3px}.layout{grid-template-columns:1fr}.panel{padding:19px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">🍌</div><span>Banana<span style="color:var(--green)">Life</span></span></div><div class="pill">RESEARCH PROTOTYPE · MOBILENETV2</div></header>
+<main>
+<section class="hero"><div class="eyebrow">Smart food quality monitoring</div><h1>Know your banana’s<br>ripening stage.</h1><p>A single-page prototype for visualizing banana ripeness and shelf-life results using MobileNetV2 as the selected reference model. Add your own banana images through <b>data/banana.json</b>.</p></section>
+<section class="layout">
+<div class="panel">
+<h2>1. Select a banana image</h2><p class="sub">Images are loaded from your local JSON manifest. Add more image entries to show them in this prototype.</p>
+<input id="fileInput" type="file" accept="image/*">
+<div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose a banana image"><div id="dropInner"><div class="upload-icon">▧</div><strong>Choose an image from your computer</strong><small>Click here or drag and drop a photo<br>JPG · PNG · WebP</small></div><img id="preview" class="preview" alt="Selected banana"></div>
+<div class="actions"><button class="primary" id="analyzeBtn">Show sample result →</button><button class="secondary" id="resetBtn">Reset</button></div>
+<p class="note">This HTML-only prototype does not run a neural network. The result below is illustrative and is not inferred from the selected image.</p>
+<div id="gallerySection" style="margin-top:22px"><h2 style="font-size:14px">Image gallery</h2><p class="sub" style="margin-bottom:12px">Choose one of the images configured in data/banana.json.</p><div id="gallery" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px"><div style="font-size:11px;color:var(--muted)">Loading gallery…</div></div><p id="jsonStatus" class="note" style="margin-top:10px">Reading data/banana.json…</p></div>
+</div>
+<div class="panel">
+<div class="resulthead"><div><h2>2. Shelf-life estimate</h2><p class="sub" style="margin:5px 0 0">Reference result · top model only</p></div><span class="model-pill">MOBILENETV2</span></div>
+<div id="empty" class="empty"><div><div class="symbol">◷</div><strong>Your result will appear here</strong><p>Choose an image and press “Show sample result” to view the sample result panel.</p></div></div>
+<div id="results" class="results" aria-live="polite">
+<div class="state"><div class="label">Example ripening assessment</div><div class="state-name" id="stage">Ripe — sample</div><div class="state-desc">Demonstration label only; not computed from the uploaded image.</div></div>
+<div class="metrics">
+<div class="metric"><span>Example shelf life</span><strong id="days">3.4 days</strong><small>Illustrative sample value</small></div>
+<div class="metric"><span>Selected model</span><strong style="font-size:18px">MobileNetV2</strong><small>Top reference model</small></div>
+<div class="metric"><span>Reported R²</span><strong>0.9116</strong><small>Reference value from research</small></div>
+<div class="metric"><span>Reported MAE</span><strong>0.5459 d</strong><small>Reference value from research</small></div>
+</div>
+<div class="metric" style="margin-top:10px"><span>Illustrative ripening timeline</span><div class="bar"><div></div></div><small style="display:block;color:var(--muted);font-size:10px;margin-top:6px">Example value: 3.4 of 7 days</small></div>
+<div class="disclaimer">Published metrics are reference values for the selected MobileNetV2 model, not live results for this image. Real inference requires the trained model and preprocessing pipeline.</div>
+</div>
+</div>
+</section>
+</main>
+<footer><span>BananaLife · Single HTML prototype</span><span>Model reference: MobileNetV2 only</span></footer>
+<script>
+const fileInput=document.getElementById('fileInput'),drop=document.getElementById('drop'),dropInner=document.getElementById('dropInner'),preview=document.getElementById('preview');
+let currentUrl=null,selectedImage=null;
+function showImage(src,label){
+ selectedImage={src,label:label||'Selected banana'};
+ preview.src=src;preview.alt=label||'Selected banana';preview.style.display='block';dropInner.style.display='none';
+}
+function chooseLocal(file){
+ if(!file)return;if(!file.type.startsWith('image/')){alert('Please select an image file.');return;}
+ if(currentUrl)URL.revokeObjectURL(currentUrl);currentUrl=URL.createObjectURL(file);showImage(currentUrl,file.name);
+}
+drop.addEventListener('click',()=>fileInput.click());
+drop.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click();}});
+fileInput.addEventListener('change',()=>chooseLocal(fileInput.files[0]));
+drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag')});
+drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');chooseLocal(e.dataTransfer.files[0])});
+document.getElementById('analyzeBtn').addEventListener('click',()=>{
+ if(!selectedImage){fileInput.click();return;}
+ document.getElementById('empty').style.display='none';document.getElementById('results').style.display='block';
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+ fileInput.value='';if(currentUrl)URL.revokeObjectURL(currentUrl);currentUrl=null;selectedImage=null;
+ preview.removeAttribute('src');preview.style.display='none';dropInner.style.display='block';
+ document.getElementById('empty').style.display='grid';document.getElementById('results').style.display='none';
+});
+async function loadGallery(){
+ const gallery=document.getElementById('gallery'),status=document.getElementById('jsonStatus');
+ try{
+  const response=await fetch('data/banana.json');
+  if(!response.ok)throw new Error('Could not load data/banana.json');
+  const data=await response.json(),images=Array.isArray(data)?data:(data.images||[]);
+  gallery.innerHTML='';
+  if(!images.length)throw new Error('No images found. Add image entries to data/banana.json.');
+  images.forEach((item,index)=>{
+   const src=typeof item==='string'?item:item.src||item.path||item.image;
+   const label=typeof item==='string'?item.split('/').pop():item.label||item.name||`Banana image ${index+1}`;
+   if(!src)return;
+   const card=document.createElement('button');card.type='button';card.style.cssText='padding:6px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;min-width:0';
+   const img=document.createElement('img');img.src=src;img.alt=label;img.loading='lazy';img.style.cssText='width:100%;height:75px;object-fit:cover;border-radius:8px;display:block;background:#f1f4ef';
+   const caption=document.createElement('span');caption.textContent=label;caption.style.cssText='display:block;font-size:10px;line-height:1.4;color:var(--muted);padding:6px 2px 1px;overflow-wrap:anywhere';
+   card.append(img,caption);card.addEventListener('click',()=>{if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null;}showImage(src,label);});
+   gallery.appendChild(card);
+  });
+  status.textContent=`Loaded ${gallery.children.length} image(s) from data/banana.json.`;
+ }catch(err){
+  // Keep the gallery hidden if the JSON manifest cannot be loaded.
+  // The manual image upload still works when opening this HTML file directly.
+  document.getElementById('gallerySection').style.display='none';
+ }
+}
+loadGallery();
+</script>
+</body>
+</html>
