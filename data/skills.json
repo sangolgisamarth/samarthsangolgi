@@ -1,0 +1,91 @@
+[
+  {
+    "label": "Programming",
+    "tags": [
+      "Java",
+      "Python",
+      "C++",
+      "JavaScript",
+      "OOP",
+      "DSA"
+    ]
+  },
+  {
+    "label": "Frontend",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "label": "Backend",
+    "tags": [
+      "FastAPI",
+      "Flask",
+      "Django",
+      "REST APIs"
+    ]
+  },
+  {
+    "label": "Generative AI",
+    "tags": [
+      "LLMs",
+      "AI Agents",
+      "RAG",
+      "LangChain",
+      "Ollama",
+      "Prompt Engineering",
+      "Vector DBs",
+      "NLP"
+    ]
+  },
+  {
+    "label": "Machine & Deep Learning",
+    "tags": [
+      "TensorFlow",
+      "Keras",
+      "PyTorch",
+      "Scikit-learn",
+      "XGBoost",
+      "CNN",
+      "MobileNetV2",
+      "Transfer Learning",
+      "Computer Vision"
+    ]
+  },
+  {
+    "label": "Databases",
+    "tags": [
+      "MySQL",
+      "MongoDB",
+      "Supabase",
+      "SQL"
+    ]
+  },
+  {
+    "label": "Data Science",
+    "tags": [
+      "Pandas",
+      "NumPy",
+      "EDA",
+      "Feature Engineering",
+      "Matplotlib",
+      "Seaborn"
+    ]
+  },
+  {
+    "label": "Cloud & Tools",
+    "tags": [
+      "AWS EC2",
+      "AWS S3",
+      "Docker",
+      "Git",
+      "CI/CD",
+      "Postman",
+      "Selenium",
+      "BeautifulSoup",
+      "Chrome Extensions"
+    ]
+  }
+]

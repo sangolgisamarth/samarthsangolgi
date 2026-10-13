@@ -1,0 +1,31 @@
+[
+  {
+    "id": "be",
+    "level": "Undergraduate",
+    "degree": "B.E. Artificial Intelligence & Data Science",
+    "institution": "PVG's College of Engineering and Technology, Pune",
+    "duration": "Aug 2023 – Jun 2027",
+    "detail": "CGPA: 8.96",
+    "score": "8.96 CGPA",
+    "status": "Pursuing",
+    "highlights": [
+      "Focus on AI, machine learning and data science",
+      "Hands-on projects in RAG systems, security and AgriTech",
+      "Add coursework, awards or research here"
+    ]
+  },
+  {
+    "id": "hsc",
+    "level": "Higher Secondary",
+    "degree": "Higher Secondary Certificate (12th HSC)",
+    "institution": "SP College, Pune",
+    "duration": "Apr 2021 – Apr 2023",
+    "detail": "MHT-CET: 92.80% · HSC: 64.5%",
+    "score": "MHT-CET 92.80%",
+    "status": "Completed",
+    "highlights": [
+      "MHT-CET percentile score: 92.80%",
+      "HSC: 64.5%"
+    ]
+  }
+]

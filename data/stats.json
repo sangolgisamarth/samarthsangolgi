@@ -1,0 +1,14 @@
+[
+  {
+    "num": "94%",
+    "label": "Phishing detection accuracy"
+  },
+  {
+    "num": "0.91",
+    "label": "R² on banana shelf-life model"
+  },
+  {
+    "num": "8.96",
+    "label": "Current CGPA"
+  }
+]

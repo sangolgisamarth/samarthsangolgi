@@ -1,0 +1,38 @@
+[
+  {
+    "name": "TensorFlow & Keras Bootcamp",
+    "issuer": "OpenCV University",
+    "year": "2026",
+    "link": ""
+  },
+  {
+    "name": "Complete Data Science, ML, DL & NLP Bootcamp",
+    "issuer": "Udemy",
+    "year": "",
+    "link": ""
+  },
+  {
+    "name": "Getting Started with Deep Learning",
+    "issuer": "NVIDIA",
+    "year": "",
+    "link": ""
+  },
+  {
+    "name": "NLP using Deep Learning",
+    "issuer": "Analytics Vidhya",
+    "year": "",
+    "link": ""
+  },
+  {
+    "name": "Code Generation & Optimization using IBM Granite",
+    "issuer": "IBM SkillsBuild",
+    "year": "",
+    "link": ""
+  },
+  {
+    "name": "Python & Django REST API Bootcamp",
+    "issuer": "Udemy",
+    "year": "",
+    "link": ""
+  }
+]
