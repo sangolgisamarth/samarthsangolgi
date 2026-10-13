@@ -12,12 +12,5 @@
     "achievement": "Best Solution Award · Krishi Sahayak",
     "image": "images/hackathon-innovateyou.jpg",
     "detail": "Outperformed 450+ teams across India in a 24-hour national hackathon."
-  },
-  {
-    "badge": "Finalist",
-    "name": "FUSION 2025",
-    "achievement": "Selected · HoneyPhish",
-    "image": "images/hackathon-fusion.jpg",
-    "detail": "Built and presented an AI-resistant phishing detection framework in 24 hours at a national-level hackathon."
   }
 ]
