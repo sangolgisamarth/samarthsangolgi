@@ -1,0 +1,77 @@
+[
+  {
+    "id": "sentinel",
+    "name": "SentinAI: Autonomous AI Security Platform",
+    "image": "images/project-sentinal.jpg",
+    "stack": [
+      "Python",
+      "RAG",
+      "Docker",
+      "Jira API",
+      "NLP"
+    ],
+    "desc": "Autonomous vulnerability detection that combines Burp Suite-style scanning, API testing and Selenium automation in one pipeline with zero external AI API calls. Chains 10+ bugs into critical attack paths, generates tests, simulates Zero Trust attacks and files Jira tickets with RACI assignment. 1st Runner-Up at MITWPU Ciphathon 26.",
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "krishi",
+    "name": "Krishi Sahayak: AI AgriTech Platform",
+    "image": "images/project-krishi.jpg",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LLMs",
+      "NLP",
+      "Deepfake Detection"
+    ],
+    "desc": "LLM-powered assistant for farmers covering 50+ government schemes, crop insurance and agricultural credit. Includes an 88% accurate DeepFake Detection Hub for scheme and insurance fraud and a personalised financial-literacy LMS. Best Solution Award among 450+ teams.",
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "honeyphish",
+    "name": "HoneyPhish: Phishing Detection & Deception",
+    "image": "images/project-honeyphish.jpg",
+    "stack": [
+      "Python",
+      "Machine Learning",
+      "NLP",
+      "Flask",
+      "Chrome Extension"
+    ],
+    "desc": "Detects phishing and AI-generated content using 30+ automatically extracted URL and content features, reaching 94% accuracy with sub-200ms scans. A honeypot with fake personas traps and analyses attackers, with a live threat dashboard and Chrome extension.",
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "banana",
+    "name": "Banana Shelf-Life Prediction",
+    "image": "images/project-banana.jpg",
+    "stack": [
+      "Python",
+      "TensorFlow",
+      "MobileNetV2",
+      "Computer Vision",
+      "Transfer Learning"
+    ],
+    "desc": "Deep learning research project estimating banana spoilage from images across Day 0 to Day 7 (R² = 0.91). Published a 1,200+ image dataset on Mendeley Data; paper in progress.",
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "cricket",
+    "name": "Cricket Score Prediction System",
+    "image": "images/project-cricket.jpg",
+    "stack": [
+      "Python",
+      "Scikit-learn",
+      "Django",
+      "AWS EC2",
+      "REST API"
+    ],
+    "desc": "Random Forest regression on 10+ match features (venue, pitch, form, weather) with about 8 runs mean absolute error. Served through a Django REST API on AWS EC2 for sub-second inference.",
+    "github": "",
+    "demo": ""
+  }
+]
